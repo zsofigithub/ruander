@@ -1,0 +1,9 @@
+<script>
+//Második feladat
+
+let szam=prompt("Adj meg egy számot!");
+let hatvany=prompt("Add meg a hatványozás mértékét!");
+let eredmeny=szam**hatvany
+document.write(`A ${szam} ${hatvany}-ik hatványa ${eredmeny}`)
+
+</script>
