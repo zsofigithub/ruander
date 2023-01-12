@@ -1,8 +1,0 @@
-<script>
-//Hatodik feladat
-for(let i=1;i<=10;i++){
-	negyzetSzam=i*i
-    document.write(`${negyzetSzam},`);
-    }
-
-</script>
