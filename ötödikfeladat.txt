@@ -1,0 +1,12 @@
+<script>
+//Ötödik feladat
+let szam=prompt("Adj meg egy számot!");
+let oszto=prompt("Add meg az osztót!");
+if(szam%oszto==0){
+	document.write(`A ${szam} osztható ${oszto}-val maradék nélkül.`);
+    }
+else{
+	document.write(`A ${szam} NEM osztható ${oszto}-val maradék nélkül.`);
+    }
+
+</script>
