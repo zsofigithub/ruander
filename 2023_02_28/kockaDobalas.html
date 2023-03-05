@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #KockaKep{
+            width:100px;
+            height:100px;
+            background-color:none;
+            margin:0px auto;
+
+        }
+    </style>
+</head>
+<body>
+
+    <input type="button" value="Dobás" id="dobas">
+    <div id="KockaKep"></div>
+    
+
+
+
+    <script>
+
+function Kockadobas(){
+    return Math.round(Math.random()*5)+1;
+}
+
+dobas.addEventListener('click', KockaMegjelenites);
+let dobasok=[];
+
+function KockaMegjelenites(){
+    let kockaSzam=Kockadobas();
+    dobasok.push(kockaSzam);
+    document.querySelector("#KockaKep").style.backgroundImage="url('"+kockaSzam+".png')";
+}
+
+
+    </script>
+</body>
+</html>
