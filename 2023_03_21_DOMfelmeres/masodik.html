@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM feladatsor-2.feladat</title>
+    <style>
+        #kirajzoltNegyzet {
+            width: 0px;
+            height: 0px;
+            border: 1px solid black;
+            display: none
+        }
+
+        #kirajzolGomb {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="number" value="100" id="xKoordinata"></input>
+    <input type="number" value="100" id="yKoordinata"></input>
+    <button id="kirajzolGomb">Kirajzol</button>
+
+    <div id="kirajzoltNegyzet"></div>
+
+
+    <script>
+        kirajzolGomb.addEventListener('click', negyzetKirajzolo);
+
+        function negyzetKirajzolo() {
+            let aOldal = document.querySelector("#xKoordinata").value;
+            let bOldal = document.querySelector("#yKoordinata").value;
+            let rajzolando = document.querySelector("#kirajzoltNegyzet");
+            rajzolando.style.width = aOldal + "px";
+            rajzolando.style.height = bOldal + "px";
+            rajzolando.style.display = "block";
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

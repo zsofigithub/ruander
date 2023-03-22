@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM feladatsor-4.feladat</title>
+    <style>
+        #uzeno {
+
+            border: 1px solid black;
+            margin-bottom: 20px;
+            display: none;
+
+        }
+
+        #ellenorzoGomb {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="uzeno">Üzenet</div>
+
+
+    <label for="email">E-mail cím:</label>
+    <input type="email" id="email"></input>
+    <label for="emailujra">E-mail cím megerősítése:</label>
+    <input type="email" id="emailujra"></input>
+    <button id="ellenorzoGomb">Ellenőrzés</button>
+
+
+
+
+    <script>
+        ellenorzoGomb.addEventListener('click', AdatEllenorzes);
+
+        function AdatEllenorzes() {
+            let email = document.querySelector("#email").value;
+            let emailUjra = document.querySelector("#emailujra").value;
+            let uzeno = document.querySelector("#uzeno");
+            if (email == "" && emailUjra == "") {
+                uzeno.style.display = "block";
+                uzeno.style.backgroundColor = "red";
+                uzeno.innerHTML = "Nincs kitöltve egyik mező sem!"
+
+            }
+            else if (email == "") {
+                uzeno.style.display = "block";
+                uzeno.style.backgroundColor = "red";
+                uzeno.innerHTML = "Nincs kitöltve az e-mail mező!"
+
+            }
+            else if (emailUjra == "") {
+                uzeno.style.display = "block";
+                uzeno.style.backgroundColor = "red";
+                uzeno.innerHTML = "Nincs kitöltve az e-mail megerősítése mező!"
+
+            }
+            
+            else if (email != emailUjra) {
+                uzeno.style.display = "block";
+                uzeno.style.backgroundColor = "red";
+                uzeno.innerHTML = "A két mező tartalma nem egyezik!"
+            }
+
+            else if (email.pattern != "/^[0-9a-z\.-]+@([0-9a-z-]+\.)+[a-z]{2,4}$/i") {
+                uzeno.style.display = "block";
+                uzeno.style.backgroundColor = "red";
+                uzeno.innerHTML = "Nem megfelelő az e-mail cím formátuma!"
+                
+
+            }
+            else {
+                uzeno.style.display = "block";
+                uzeno.style.backgroundColor = "green";
+                uzeno.innerHTML = "Adatok rögzítése sikeres!"
+
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

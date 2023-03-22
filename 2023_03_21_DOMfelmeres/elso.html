@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM feladatsor-1.feladat</title>
+</head>
+
+<body>
+
+    <input type="text" id="text"></input>
+    <p id="karakterszam">0</p>
+
+
+
+    <script>
+        text.addEventListener('input', szovegHossz);
+        function szovegHossz() {
+            let karakterekSzama = document.querySelector("#text").value;
+            let szovegHossz = karakterekSzama.length;
+
+            document.querySelector("#karakterszam").innerHTML = `${szovegHossz} karakter`;
+        }
+    </script>
+</body>
+
+</html>

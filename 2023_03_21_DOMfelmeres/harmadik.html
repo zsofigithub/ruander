@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM feladatsor-3.feladat</title>
+    <style>
+        @keyframes halvanyito {
+            from {
+                opacity: 1;
+
+            }
+
+            to {
+                opacity: 0;
+
+            }
+        }
+
+        @keyframes megjelenito {
+            from {
+                opacity: 0;
+
+            }
+
+            to {
+                opacity: 1;
+
+            }
+        }
+
+        #cat {
+            width: 300px;
+            animation-name: megjelenito;
+            animation-duration: 5s;
+            animation-fill-mode: both;
+            animation-timing-function: linear;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="bujocskaGomb">Bújócska</button>
+
+    <img src="hidingCat.jpg" id="cat"></img>
+
+
+
+    <script>
+        bujocskaGomb.addEventListener('click', kepAnimalo);
+
+        function kepAnimalo() {
+            let allapot = document.querySelector("#cat").style.animationName;
+            if (allapot != "halvanyito") {
+                document.querySelector("#cat").style.animationName = "halvanyito";
+
+            }
+            else {
+                document.querySelector("#cat").style.animationName = "megjelenito";
+
+            }
+
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
